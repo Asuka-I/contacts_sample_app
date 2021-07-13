@@ -1,5 +1,5 @@
 if Rails.env.production?
-  host = "https://still-refuge-53738.herokuapp.com"
+  host = "still-refuge-53738.herokuapp.com"
   # メール配信に失敗した場合にエラーを発生
   ActionMailer::Base.raise_delivery_errors = true
   ActionMailer::Base.delivery_method = :smtp
