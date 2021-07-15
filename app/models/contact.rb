@@ -1,4 +1,5 @@
 class Contact < ApplicationRecord
+  include Confirmable
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :name, length: { maximum: 48 }
