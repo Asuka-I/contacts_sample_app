@@ -11,9 +11,11 @@ module Confirmable
 
     def confirming
       # 「送信」ボタンをクリックして，ユーザーの入力にエラーが存在しないとき
-      self.submitted = "1" if submitted == "" && errors.keys == [:submitted]
+      if self.submitted == "" && self.errors.keys == [:submitted]
+        self.submitted = "1"
+      end
       # 「戻る」ボタンをクリックしたとき
-      self.submitted = "" if confirmed == ""
+      self.submitted = "" if self.confirmed == ""
 
       errors.delete :submitted
       errors.delete :confirmed
